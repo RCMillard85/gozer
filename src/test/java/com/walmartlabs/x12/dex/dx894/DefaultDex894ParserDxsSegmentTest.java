@@ -110,7 +110,7 @@ public class DefaultDex894ParserDxsSegmentTest {
         X12Segment segment = new X12Segment("DXE*1*2");
         dexParser.parseApplicationTrailer(segment, dex);
         assertEquals("1", dex.getTrailerTransmissionControlNumber());
-        assertEquals(new Integer(2), dex.getNumberOfTransactions());
+        assertEquals(Integer.valueOf(2), dex.getNumberOfTransactions());
     }
 
     @Test
@@ -119,7 +119,7 @@ public class DefaultDex894ParserDxsSegmentTest {
         X12Segment segment = new X12Segment("DXE**2");
         dexParser.parseApplicationTrailer(segment, dex);
         assertEquals(null, dex.getTrailerTransmissionControlNumber());
-        assertEquals(new Integer(2), dex.getNumberOfTransactions());
+        assertEquals(Integer.valueOf(2), dex.getNumberOfTransactions());
     }
 
     @Test
