@@ -85,7 +85,7 @@ public class Asn856ParserTest {
         assertEquals(">", isa.getElementSeparator());
 
         // Groups
-        assertEquals(new Integer(1), isa.getNumberOfGroups());
+        assertEquals(Integer.valueOf(1), isa.getNumberOfGroups());
         assertEquals("000000049", isa.getTrailerInterchangeControlNumber());
 
         List<X12Group> groups = x12.getGroups();
@@ -147,7 +147,7 @@ public class Asn856ParserTest {
         assertEquals(">", isa.getElementSeparator());
 
         // Groups
-        assertEquals(new Integer(1), isa.getNumberOfGroups());
+        assertEquals(Integer.valueOf(1), isa.getNumberOfGroups());
         assertEquals("000000049", isa.getTrailerInterchangeControlNumber());
 
         List<X12Group> groups = x12.getGroups();

@@ -77,8 +77,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("148303793", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("148303793", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(42), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(42), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(42), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(42), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("148303793", dexTx.getSupplierNumber());
@@ -238,7 +238,7 @@ public class DefaultDex894ParseValidateTest {
 
         // DXE segment
         assertEquals("1", dex.getTrailerTransmissionControlNumber());
-        assertEquals(new Integer(1), dex.getNumberOfTransactions());
+        assertEquals(Integer.valueOf(1), dex.getNumberOfTransactions());
     }
 
     @Test
@@ -305,8 +305,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("569145629", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("569145629", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(10), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(10), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(10), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(10), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("569145629", dexTx.getSupplierNumber());
@@ -380,8 +380,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("569145630", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("569145630", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(10), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(10), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(10), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(10), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("569145630", dexTx.getSupplierNumber());
@@ -447,7 +447,7 @@ public class DefaultDex894ParseValidateTest {
 
         // DXE segment
         assertEquals("1", dex.getTrailerTransmissionControlNumber());
-        assertEquals(new Integer(2), dex.getNumberOfTransactions());
+        assertEquals(Integer.valueOf(2), dex.getNumberOfTransactions());
     }
 
     @Test
@@ -482,8 +482,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("0101", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("0101", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(13), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(13), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(13), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(13), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("001701001701", dexTx.getSupplierNumber());
@@ -520,7 +520,7 @@ public class DefaultDex894ParseValidateTest {
         assertEquals(null, dexItem.getConsumerProductId());
         assertEquals(null, dexItem.getCaseUpc());
         assertEquals("2.1300", dexItem.getItemListCost().toString());
-        assertEquals(new Integer(1), dexItem.getPackCount());
+        assertEquals(Integer.valueOf(1), dexItem.getPackCount());
         assertEquals("1/2 GAL TEST 1", dexItem.getItemDescription());
         assertEquals(null, dexItem.getCaseProductQualifier());
         assertEquals(null, dexItem.getCaseProductId());
@@ -555,7 +555,7 @@ public class DefaultDex894ParseValidateTest {
         assertEquals(null, dexItem.getConsumerProductId());
         assertEquals(null, dexItem.getCaseUpc());
         assertEquals("2.2500", dexItem.getItemListCost().toString());
-        assertEquals(new Integer(1), dexItem.getPackCount());
+        assertEquals(Integer.valueOf(1), dexItem.getPackCount());
         assertEquals("1/2 GAL TEST 2", dexItem.getItemDescription());
         assertEquals(null, dexItem.getCaseProductQualifier());
         assertEquals(null, dexItem.getCaseProductId());
@@ -597,8 +597,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("0101", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("0101", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(9), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(9), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(9), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(9), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("001701001701", dexTx.getSupplierNumber());
@@ -635,7 +635,7 @@ public class DefaultDex894ParseValidateTest {
         assertEquals(null, dexItem.getConsumerProductId());
         assertEquals("007800001180", dexItem.getCaseUpc());
         assertEquals("14.0000", dexItem.getItemListCost().toString());
-        assertEquals(new Integer(2), dexItem.getPackCount());
+        assertEquals(Integer.valueOf(2), dexItem.getPackCount());
         assertEquals("12z12P 7Up", dexItem.getItemDescription());
         assertEquals(null, dexItem.getCaseProductQualifier());
         assertEquals(null, dexItem.getCaseProductId());
@@ -678,8 +678,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("0101", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("0101", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(9), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(9), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(9), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(9), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("001701001701", dexTx.getSupplierNumber());
@@ -716,11 +716,11 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("00078000011807", dexItem.getConsumerProductId());
         assertEquals(null, dexItem.getCaseUpc());
         assertEquals("14.0000", dexItem.getItemListCost().toString());
-        assertEquals(new Integer(2), dexItem.getPackCount());
+        assertEquals(Integer.valueOf(2), dexItem.getPackCount());
         assertEquals("12z12P 7Up", dexItem.getItemDescription());
         assertEquals(null, dexItem.getCaseProductQualifier());
         assertEquals(null, dexItem.getCaseProductId());
-        assertEquals(new Integer(1), dexItem.getInnerPackCount());
+        assertEquals(Integer.valueOf(1), dexItem.getInnerPackCount());
         // G72 segment
         List<Dex894Allowance> dexAllowances = dexItem.getAllowances();
         assertNull(dexAllowances);
@@ -760,8 +760,8 @@ public class DefaultDex894ParseValidateTest {
         assertEquals("0002", dexTx.getHeaderControlNumber());
         // SE segment
         assertEquals("0002", dexTx.getTrailerControlNumber());
-        assertEquals(new Integer(13), dexTx.getExpectedNumberOfSegments());
-        assertEquals(new Integer(13), dexTx.getActualNumberOfSegments());
+        assertEquals(Integer.valueOf(13), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(13), dexTx.getActualNumberOfSegments());
         // G82 segment
         assertEquals(InvoiceType.D, dexTx.getDebitCreditFlag());
         assertEquals("109152000116", dexTx.getSupplierNumber());
