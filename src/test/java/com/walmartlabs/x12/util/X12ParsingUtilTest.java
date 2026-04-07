@@ -175,11 +175,11 @@ public class X12ParsingUtilTest {
     public void test_parseVersion() {
         assertNull(X12ParsingUtil.parseVersion(null));
         assertNull(X12ParsingUtil.parseVersion(""));
-        assertEquals(new Integer(4010), X12ParsingUtil.parseVersion("004010UCS"));
-        assertEquals(new Integer(5010), X12ParsingUtil.parseVersion("005010UCS"));
-        assertEquals(new Integer(4010), X12ParsingUtil.parseVersion("4010"));
-        assertEquals(new Integer(4010), X12ParsingUtil.parseVersion("004010"));
-        assertEquals(new Integer(4010), X12ParsingUtil.parseVersion("4010UCS"));
+        assertEquals(Integer.valueOf(4010), X12ParsingUtil.parseVersion("004010UCS"));
+        assertEquals(Integer.valueOf(5010), X12ParsingUtil.parseVersion("005010UCS"));
+        assertEquals(Integer.valueOf(4010), X12ParsingUtil.parseVersion("4010"));
+        assertEquals(Integer.valueOf(4010), X12ParsingUtil.parseVersion("004010"));
+        assertEquals(Integer.valueOf(4010), X12ParsingUtil.parseVersion("4010UCS"));
     }
 
     @Test

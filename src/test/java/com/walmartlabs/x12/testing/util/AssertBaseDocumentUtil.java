@@ -71,7 +71,7 @@ public final class AssertBaseDocumentUtil {
         InterchangeControlEnvelope ise = x12.getInterchangeControlEnvelope();
         assertNotNull(ise);
         assertEquals("000000049", ise.getInterchangeControlNumber());
-        assertEquals(new Integer(2), ise.getNumberOfGroups());
+        assertEquals(Integer.valueOf(2), ise.getNumberOfGroups());
 
         // groups
         assertNotNull(x12.getGroups());
@@ -141,7 +141,7 @@ public final class AssertBaseDocumentUtil {
         InterchangeControlEnvelope ise = x12.getInterchangeControlEnvelope();
         assertNotNull(ise);
         assertEquals("000000049", ise.getInterchangeControlNumber());
-        assertEquals(new Integer(2), ise.getNumberOfGroups());
+        assertEquals(Integer.valueOf(2), ise.getNumberOfGroups());
 
         // groups
         assertNotNull(x12.getGroups());
