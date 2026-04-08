@@ -67,6 +67,7 @@ public class X12Segment {
     /**
      * extracts the first data element in a segment which is the segment identifier
      * otherwise return an empty String
+     * @return the result
      */
     public String getIdentifier() {
         if (segmentElements != null && !segmentElements.isEmpty()) {
@@ -78,6 +79,8 @@ public class X12Segment {
 
     /**
      * retrieve the element at a particular index in the segment
+     * @param index the index
+     * @return the result
      */
     public String getElement(int index) {
         if (segmentElements.size() > index) {
@@ -95,6 +98,9 @@ public class X12Segment {
     /**
      * parses the segment into a list of data elements
      * each date element is separated by an asterisk (*)
+     * @param segment the segment
+     * @param dataElementDelimiter the dataElementDelimiter
+     * @return the result
      */
     private List<String> splitSegmentIntoDataElements(String segment, Character dataElementDelimiter) {
         if (StringUtils.isEmpty(segment)) {

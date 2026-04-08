@@ -50,6 +50,8 @@ public class Tare extends X12ParsedLoop {
 
     /**
      * returns true if the loop passed in is a Tare loop
+     * @param loop the loop
+     * @return the result
      */
     public static boolean isTareLoop(X12Loop loop) {
         return X12Loop.isLoopWithCode(loop, TARE_LOOP_CODE);

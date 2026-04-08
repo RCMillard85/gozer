@@ -76,7 +76,7 @@ public final class SourceToSegmentUtil {
      * @param sourceData
      * @param segmentSeparatorRegEx a regex to split segments
      * @return a {@link List} of {@link X12Segment} or empty is either parameter is missing
-     * @throws @{link PatternSyntaxException} if the regular expression is invalid
+     * @throws PatternSyntaxException if the regular expression is invalid
      */
     private static List<X12Segment> splitSourceDataIntoSegments(String sourceData, String segmentSeparatorRegEx) {
         if (StringUtils.isEmpty(sourceData) || StringUtils.isEmpty(segmentSeparatorRegEx)) {

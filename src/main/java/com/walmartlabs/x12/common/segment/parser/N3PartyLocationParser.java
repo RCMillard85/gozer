@@ -25,6 +25,7 @@ public final class N3PartyLocationParser {
      * parse the segment
      * @param segment
      * @return
+     * @return the result
      */
     public static N3PartyLocation parse(X12Segment segment) {
         N3PartyLocation n3 = null;

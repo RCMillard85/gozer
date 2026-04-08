@@ -29,7 +29,7 @@ public final class X12ParsingUtil {
      * return the numeric part of a version number
      *
      * @param versionValue
-     * @return
+     * @return the result
      */
     public static Integer parseVersion(String versionValue) {
         if (versionValue != null && !versionValue.isEmpty()) {
@@ -83,6 +83,9 @@ public final class X12ParsingUtil {
      * and last segments and evaluate whether they match
      * the header and trailer values passed into the method
      *
+     * @param segmentList the segmentList
+     * @param headerIdentifier the headerIdentifier
+     * @param trailerIdentifier the trailerIdentifier
      * @return true if envelope matches otherwise false
      */
     public static boolean isValidEnvelope(List<X12Segment> segmentList, String headerIdentifier, String trailerIdentifier) {

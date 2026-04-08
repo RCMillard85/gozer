@@ -25,6 +25,7 @@ public final class TD5CarrierDetailParser {
      * parse the segment
      * @param segment
      * @return
+     * @return the result
      */
     public static TD5CarrierDetail parse(X12Segment segment) {
         TD5CarrierDetail td5 = null;

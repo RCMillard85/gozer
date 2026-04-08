@@ -2,30 +2,24 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.walmartlabs</groupId>
-    <artifactId>walmartlabs-pom</artifactId>
-    <version>1</version>
-  </parent>
-
   <groupId>com.walmartlabs.x12</groupId>
   <artifactId>gozer</artifactId>
   <name>gozer</name>
   <version>0.3.6-SNAPSHOT</version>
-  <packaging>takari-jar</packaging>
+  <packaging>jar</packaging>
 
   <properties>
-    <!-- Checkstyle updated to 10.x - existing javadoc violations need fixing separately -->
-    <checkstyle.fail.on.violation>false</checkstyle.fail.on.violation>
-    <checkstyle.fail.on.error>false</checkstyle.fail.on.error>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.release>21</maven.compiler.release>
+    <checkstyle.fail.on.violation>true</checkstyle.fail.on.violation>
+    <checkstyle.fail.on.error>true</checkstyle.fail.on.error>
     <junit.version>5.10.1</junit.version>
     <mockito.version>5.11.0</mockito.version>
     <slf4j.version>2.0.12</slf4j.version>
     <logback.version>1.5.3</logback.version>
     <apache.common.lang.version>3.14.0</apache.common.lang.version>
     <apache.common.collection.version>4.4</apache.common.collection.version>
-    <spring.version>5.3.33</spring.version>
-    <maven.compiler.source>${takari.javaSourceVersion}</maven.compiler.source>
     <maven.compiler.verbose>true</maven.compiler.verbose>
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
   </properties>
@@ -88,19 +82,13 @@
 
   <build>
     <plugins>
-      <!-- Takari lifecycle plugin configuration -->
-      <!-- Compiler args needed for future JUnit 5 migration -->
-      <!-- Eclipse ECJ (used by Takari) restricts access to internal JUnit 5 classes -->
-      <!-- The add-opens flag allows the compiler to access java.base modules -->
+      <!-- maven-compiler-plugin for Java 21 -->
       <plugin>
-        <groupId>io.takari.maven.plugins</groupId>
-        <artifactId>takari-lifecycle-plugin</artifactId>
-        <extensions>true</extensions>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
         <configuration>
-          <compilerId>jdt</compilerId>
-          <compilerArgs>
-            <arg>-J--add-opens=java.base/java.lang=ALL-UNNAMED</arg>
-          </compilerArgs>
+          <release>21</release>
         </configuration>
       </plugin>
       <!-- code coverage -->

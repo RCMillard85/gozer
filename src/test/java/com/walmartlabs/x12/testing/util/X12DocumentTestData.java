@@ -13,6 +13,7 @@ public final class X12DocumentTestData {
      *
      * @param file
      * @return
+     * @return the result
      */
     public static String readFile(String file) {
         String fileContents = null;
@@ -29,6 +30,7 @@ public final class X12DocumentTestData {
      *
      * @param file
      * @return
+     * @return the result
      */
     public static byte[] readFileAsBytes(String file) {
         byte[] fileContents = null;

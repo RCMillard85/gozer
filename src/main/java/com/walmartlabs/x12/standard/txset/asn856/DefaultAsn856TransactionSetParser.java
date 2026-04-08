@@ -112,6 +112,8 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
     /**
      * the first segment in the list of {@link X12Segment} should be an ST
      * the last segment in the list of {@link X12Segment} should be an SE
+     * @param transactionSegments the transactionSegments
+     * @param asnTx the asnTx
      */
     protected void doParsing(List<X12Segment> transactionSegments, AsnTransactionSet asnTx) {
 
@@ -185,6 +187,8 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
     /**
      * parse a Shipment Loop
      *
+     * @param unparsedLoop the unparsedLoop
+     * @param asnTx the asnTx
      */
     private void parseShipmentLoop(X12Loop unparsedLoop, AsnTransactionSet asnTx) {
         //
@@ -223,6 +227,7 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
      *
      * @param unparsedLoop
      * @param shipment
+     * @param asnTx the asnTx
      */
     private void parseOrderLoop(X12Loop unparsedLoop, Shipment shipment, AsnTransactionSet asnTx) {
         //
@@ -384,6 +389,7 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
      * @param loop
      * @param loopObject
      * @param function
+     * @param <T> the type parameter
      */
     private <T> void handleLoopSegments(X12Loop loop, T loopObject, TriConsumer<X12Segment, SegmentIterator, T> function) {
         List<X12Segment> shipmentSegments = loop.getSegments();
@@ -541,7 +547,7 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
      *
      * @param segment
      * @param segmentIterator
-     * @param items
+     * @param item the item
      */
     private void doItemSegments(X12Segment segment, SegmentIterator segmentIterator, Item item) {
         switch (segment.getIdentifier()) {
@@ -573,7 +579,7 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
      *
      * @param segment
      * @param segmentIterator
-     * @param items
+     * @param batch the batch
      */
     private void doBatchSegments(X12Segment segment, SegmentIterator segmentIterator, Batch batch) {
         switch (segment.getIdentifier()) {
@@ -611,7 +617,7 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
      * it will also move the segment iterator to first loop
      *
      * @param segments
-     * @param txSet
+     * @param txSet the transaction set
      */
     protected void parseSegmentsBeforeFirstLoop(SegmentIterator segments, AsnTransactionSet txSet) {
 
@@ -648,7 +654,7 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
      * it will also move the segment iterator to first segment after loops
      *
      * @param segments
-     * @param txSet
+     * @param asnTx the asnTx
      */
     protected void handleLooping(SegmentIterator segments, AsnTransactionSet asnTx) {
 
@@ -692,6 +698,8 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
     /**
      * expects the current segment to be the first HL loop occurring
      * in the transaction set
+     * @param segments the segments
+     * @return the result
      */
     private int findIndexForSegmentAfterHierarchicalLoops(SegmentIterator segments) {
         int firstLoopSegmentIndex = segments.currentIndex();
@@ -731,6 +739,8 @@ public class DefaultAsn856TransactionSetParser extends AbstractTransactionSetPar
 
     /**
      * checks for CTT or AMT
+     * @param segments the segments
+     * @param genericTx the genericTx
      */
     private void handleOptionalSegments(SegmentIterator segments, AsnTransactionSet genericTx) {
         while (segments.hasNext()) {

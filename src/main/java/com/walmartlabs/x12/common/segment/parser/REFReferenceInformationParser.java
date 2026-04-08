@@ -25,6 +25,7 @@ public final class REFReferenceInformationParser {
      * parse the segment
      * @param segment
      * @return
+     * @return the result
      */
     public static REFReferenceInformation parse(X12Segment segment) {
         REFReferenceInformation ref = null;

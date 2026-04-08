@@ -63,6 +63,8 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * compare the actual number of DEX transactions/invoices w/ the expected count
+     * @param dex the dex
+     * @return the result
      */
     protected X12ErrorDetail compareTransactionCounts(Dex894 dex) {
         X12ErrorDetail detail = null;
@@ -81,6 +83,8 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
     /**
      * insure the G8202 supplier number is not duplicated
      * within the DEX transmission
+     * @param dex the dex
+     * @return the result
      */
     protected X12ErrorDetail checkForDuplicateInvoiceNumbers(Dex894 dex) {
         X12ErrorDetail detail = null;
@@ -107,6 +111,7 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexTx
      * @param performCrcCheck
      * @return
+     * @return the result
      */
     protected Set<X12ErrorDetail> validateDexTransaction(Integer dexVersion, Dex894TransactionSet dexTx, boolean performCrcCheck) {
         Set<X12ErrorDetail> errors = new HashSet<>();
@@ -132,6 +137,7 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexVersion
      * @param dexTx
      * @return
+     * @return the result
      */
     protected Set<X12ErrorDetail> validateItems(Integer dexVersion, Dex894TransactionSet dexTx) {
         Set<X12ErrorDetail> errors = new HashSet<>();
@@ -158,6 +164,7 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexVersion
      * @param dexAllowances
      * @return
+     * @return the result
      */
     protected Set<X12ErrorDetail> validateAllowances(Integer dexVersion, List<Dex894Allowance> dexAllowances) {
         Set<X12ErrorDetail> errors = new HashSet<>();
@@ -180,6 +187,7 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexVersion
      * @param dexAllowance
      * @return
+     * @return the result
      */
     protected X12ErrorDetail checkAllowanceCode(Integer dexVersion, Dex894Allowance dexAllowance) {
         X12ErrorDetail detail = null;
@@ -196,6 +204,7 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexVersion
      * @param dexAllowance
      * @return
+     * @return the result
      */
     protected X12ErrorDetail checkMethodHandlingCode(Integer dexVersion, Dex894Allowance dexAllowance) {
         X12ErrorDetail detail = null;
@@ -217,6 +226,7 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexVersion
      * @param dexAllowance
      * @return
+     * @return the result
      */
     protected X12ErrorDetail checkAllowanceAmount(Integer dexVersion, Dex894Allowance dexAllowance) {
         X12ErrorDetail detail = null;
@@ -233,6 +243,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * make sure the transaction (ST - G86) matches integrity check value on G85
+     * @param dexVersion the dexVersion
+     * @param dexTx the dexTx
+     * @return the result
      */
     protected X12ErrorDetail checkTransactionIntegrity(Integer dexVersion, Dex894TransactionSet dexTx) {
         X12ErrorDetail detail = null;
@@ -248,6 +261,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * make sure G8202 has value
+     * @param dexVersion the dexVersion
+     * @param dexTx the dexTx
+     * @return the result
      */
     protected X12ErrorDetail checkSupplierNumber(Integer dexVersion, Dex894TransactionSet dexTx) {
         X12ErrorDetail detail = null;
@@ -263,6 +279,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * make sure G8204 has value
+     * @param dexVersion the dexVersion
+     * @param dexTx the dexTx
+     * @return the result
      */
     protected X12ErrorDetail checkReceiverLocationNumber(Integer dexVersion, Dex894TransactionSet dexTx) {
         X12ErrorDetail detail = null;
@@ -278,6 +297,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * make sure G8207 has value
+     * @param dexVersion the dexVersion
+     * @param dexTx the dexTx
+     * @return the result
      */
     protected X12ErrorDetail checkSupplierDate(Integer dexVersion, Dex894TransactionSet dexTx) {
         X12ErrorDetail detail = null;
@@ -295,6 +317,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * compare the actual number of DEX transactions segments w/ the expected count
+     * @param dexVersion the dexVersion
+     * @param dexTx the dexTx
+     * @return the result
      */
     protected X12ErrorDetail compareTransactionSegmentCounts(Integer dexVersion, Dex894TransactionSet dexTx) {
         X12ErrorDetail detail = null;
@@ -312,6 +337,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * compare the DEX transaction control numbers on ST and SE segments
+     * @param dexVersion the dexVersion
+     * @param dexTx the dexTx
+     * @return the result
      */
     protected X12ErrorDetail compareTransactionControlNumbers(Integer dexVersion, Dex894TransactionSet dexTx) {
         X12ErrorDetail detail = null;
@@ -331,6 +359,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
     /**
      * make sure G8302 is a valid value
      *
+     * @param dexVersion the dexVersion
+     * @param dexItem the dexItem
+     * @return the result
      */
     protected X12ErrorDetail checkQuantity(Integer dexVersion, Dex894Item dexItem) {
         X12ErrorDetail detail = null;
@@ -349,6 +380,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
     /**
      * make sure G8303 is a valid value
      *
+     * @param dexVersion the dexVersion
+     * @param dexItem the dexItem
+     * @return the result
      */
     protected X12ErrorDetail checkUnitMeasure(Integer dexVersion, Dex894Item dexItem) {
         X12ErrorDetail detail = null;
@@ -366,6 +400,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * if G8303 is not CA then make sure we have:
      * version 4010 = G8304
      * version 5010 = G8305 and G8306
+     * @param dexVersion the dexVersion
+     * @param dexItem the dexItem
+     * @return the result
      */
     protected X12ErrorDetail checkItemIdentifier(Integer dexVersion, Dex894Item dexItem) {
         X12ErrorDetail detail = null;
@@ -391,6 +428,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * if G8303 is CA then make sure we have:
      * version 4010 = G8307
      * version 5010 = G8311 & G8312
+     * @param dexVersion the dexVersion
+     * @param dexItem the dexItem
+     * @return the result
      */
     protected X12ErrorDetail checkCaseUpc(Integer dexVersion, Dex894Item dexItem) {
         X12ErrorDetail detail = null;
@@ -414,6 +454,9 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
 
     /**
      * if G8303 is CA then make sure we have G8309
+     * @param dexVersion the dexVersion
+     * @param dexItem the dexItem
+     * @return the result
      */
     protected X12ErrorDetail checkCaseCount(Integer dexVersion, Dex894Item dexItem) {
         X12ErrorDetail detail = null;

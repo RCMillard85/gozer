@@ -107,7 +107,8 @@ public class DefaultDex894Parser implements X12Parser<Dex894> {
                         Dex894TransactionSet dexTx = new Dex894TransactionSet();
                         idx = this.parseDexTransaction(idx, segmentLines, dexTx);
                         dex.addTransaction(dexTx);
-                    } while (idx < lastSegmentIndex);
+                    }
+                    while (idx < lastSegmentIndex);
 
                     // application trailer
                     this.parseApplicationTrailer(segmentLines.get(lastSegmentIndex), dex);
@@ -167,7 +168,8 @@ public class DefaultDex894Parser implements X12Parser<Dex894> {
                 segmentIdx = this.parseDexTransactionLoop(segmentIdx, dexSegments, dexTx);
                 segment = dexSegments.get(segmentIdx);
                 segmentId = segment.getIdentifier();
-            } while (TRANSACTION_SET_HEADER_ID.equals(segmentId));
+            }
+            while (TRANSACTION_SET_HEADER_ID.equals(segmentId));
 
             // next set of lines after the transaction loop can vary
             segment = dexSegments.get(segmentIdx);
@@ -255,7 +257,8 @@ public class DefaultDex894Parser implements X12Parser<Dex894> {
                     this.handleUnexpectedSegment(G83_ID, segmentId);
                 }
 
-            } while (!LOOP_TRAILER_ID.equals(segmentId));
+            }
+            while (!LOOP_TRAILER_ID.equals(segmentId));
         }
 
         return segmentIdx;

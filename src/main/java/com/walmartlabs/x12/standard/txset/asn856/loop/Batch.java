@@ -64,6 +64,8 @@ public class Batch extends X12ParsedLoop {
 
     /**
      * returns true if the loop passed in is a Batch loop
+     * @param loop the loop
+     * @return the result
      */
     public static boolean isBatchLoop(X12Loop loop) {
         return X12Loop.isLoopWithCode(loop, BATCH_LOOP_CODE);

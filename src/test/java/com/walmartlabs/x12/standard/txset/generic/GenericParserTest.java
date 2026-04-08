@@ -498,6 +498,7 @@ public class GenericParserTest {
     /**
      * Based on sample
      * https://www.1edisource.com/resources/edi-transactions-sets/edi-850/
+     * @return the result
      */
     private String samplePurchaseOrder() {
         return new StringBuilder()
@@ -659,7 +660,7 @@ public class GenericParserTest {
         assertEquals(">", isa.getElementSeparator());
 
         // Groups
-        assertEquals(new Integer(1), isa.getNumberOfGroups());
+        assertEquals(Integer.valueOf(1), isa.getNumberOfGroups());
         assertEquals("000003438", isa.getTrailerInterchangeControlNumber());
 
         List<X12Group> groups = x12Doc.getGroups();

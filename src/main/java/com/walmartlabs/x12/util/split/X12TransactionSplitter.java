@@ -262,7 +262,6 @@ public class X12TransactionSplitter {
      * based on the splitting that occurred
      *
      * @param groupTrailer
-     * @param transactionsInGroup
      */
     protected void alterGroupTrailerBasedOnSplit(X12Segment groupTrailer) {
         // a consumer could decide to replace the transaction count
@@ -437,6 +436,7 @@ public class X12TransactionSplitter {
         }
 
         /**
+         * @param segment the segment
          */
         public void addSegmentToTransaction(X12Segment segment) {
             if (transactionSegmentList == null) {

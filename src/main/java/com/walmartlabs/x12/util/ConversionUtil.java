@@ -28,6 +28,7 @@ public final class ConversionUtil {
      * @param theString
      * @param decimalPlaces
      * @return
+     * @return the result
      */
     public static BigDecimal convertStringToBigDecimal(String theString, int decimalPlaces) {
         BigDecimal returnValue = null;
@@ -45,6 +46,7 @@ public final class ConversionUtil {
      * convert a String to a Integer
      * @param theString
      * @return
+     * @return the result
      */
     public static Integer convertStringToInteger(String theString) {
         Integer returnInteger = null;

@@ -25,6 +25,7 @@ public class SN1ItemDetailParser {
      * parse the segment
      * @param segment
      * @return
+     * @return the result
      */
     public static SN1ItemDetail parse(X12Segment segment) {
         SN1ItemDetail sn1 = null;

@@ -25,6 +25,7 @@ public final class PO4ItemPhysicalDetailParser {
      * parse the segment
      * @param segment
      * @return
+     * @return the result
      */
     public static PO4ItemPhysicalDetail parse(X12Segment segment) {
         PO4ItemPhysicalDetail po4 = null;

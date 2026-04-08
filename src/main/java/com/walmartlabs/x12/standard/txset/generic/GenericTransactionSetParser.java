@@ -64,6 +64,8 @@ public class GenericTransactionSetParser extends AbstractTransactionSetParserCha
     /**
      * the first segment in the list of {@link X12Segment} should be an ST
      * the last segment in the list of {@link X12Segment} should be an SE
+     * @param transactionSegments the transactionSegments
+     * @param genericTx the genericTx
      */
     protected void doParsing(List<X12Segment> transactionSegments, GenericTransactionSet genericTx) {
         SegmentIterator segments = new SegmentIterator(transactionSegments);
@@ -127,7 +129,7 @@ public class GenericTransactionSetParser extends AbstractTransactionSetParserCha
      * that caused the looping to stop
      *
      * @param segments
-     * @param txSet
+     * @param genericTx the genericTx
      * @throws X12ParserException if no HL loop is found
      */
     protected void parseSegmentsBeforeHierarchyLoops(SegmentIterator segments, GenericTransactionSet genericTx) {
@@ -149,7 +151,8 @@ public class GenericTransactionSetParser extends AbstractTransactionSetParserCha
 
     /**
      * checks for an HL loop, CTT or AMT or SE
-     * @return
+     * @param segment the segment
+     * @return the result
      */
     private boolean isLoopSegmentOrOptionalSegmentOrEndingSegment(X12Segment segment) {
         return X12LoopUtil.isHierarchicalLoopStart(segment)
@@ -160,7 +163,8 @@ public class GenericTransactionSetParser extends AbstractTransactionSetParserCha
 
     /**
      * checks for CTT or AMT
-     * @return
+     * @param segments the segments
+     * @param genericTx the genericTx
      */
     private void handleOptionalSegments(SegmentIterator segments, GenericTransactionSet genericTx) {
         while (segments.hasNext()) {
@@ -220,6 +224,8 @@ public class GenericTransactionSetParser extends AbstractTransactionSetParserCha
     /**
      * expects the current segment to be the first HL loop occurring
      * in the transaction set
+     * @param segments the segments
+     * @return the result
      */
     private int findIndexForSegmentAfterHierarchicalLoops(SegmentIterator segments) {
         int firstLoopSegmentIndex = segments.currentIndex();

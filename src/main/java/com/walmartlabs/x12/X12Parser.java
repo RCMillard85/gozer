@@ -24,6 +24,7 @@ public interface X12Parser<T extends X12Document> {
     /**
      * parse the X12 transmission into a representative Java object
      *
+     * @param sourceData the sourceData
      * @return the representative Java object
      * @throws X12ParserException
      */
@@ -35,7 +36,7 @@ public interface X12Parser<T extends X12Document> {
      * was not the one that was expected
      * @param expectedSegmentId
      * @param actualSegmentId
-     * @throws {@link X12ParserException}
+     * @throws X12ParserException if unexpected segment found
      */
     default void handleUnexpectedSegment(String expectedSegmentId, String actualSegmentId) {
         throw X12ParsingUtil.handleUnexpectedSegment(expectedSegmentId, actualSegmentId);

@@ -25,6 +25,7 @@ public final class PRFPurchaseOrderReferenceParser {
      * parse the segment
      * @param segment
      * @return
+     * @return the result
      */
     public static PRFPurchaseOrderReference parse(X12Segment segment) {
         PRFPurchaseOrderReference prf = null;

@@ -257,7 +257,7 @@ public class DefaultDex894ParserTransactionTest {
         Dex894TransactionSet dexTx = new Dex894TransactionSet();
         X12Segment segment = new X12Segment("SE*10*569145629");
         dexParser.parseTransactionSetTrailer(segment, dexTx);
-        assertEquals(new Integer(10), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(10), dexTx.getExpectedNumberOfSegments());
         assertEquals("569145629", dexTx.getTrailerControlNumber());
     }
 
@@ -266,7 +266,7 @@ public class DefaultDex894ParserTransactionTest {
         Dex894TransactionSet dexTx = new Dex894TransactionSet();
         X12Segment segment = new X12Segment("SE*10*");
         dexParser.parseTransactionSetTrailer(segment, dexTx);
-        assertEquals(new Integer(10), dexTx.getExpectedNumberOfSegments());
+        assertEquals(Integer.valueOf(10), dexTx.getExpectedNumberOfSegments());
         assertEquals(null, dexTx.getTrailerControlNumber());
     }
 

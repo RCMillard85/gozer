@@ -95,6 +95,7 @@ public abstract class X12ParsedLoop extends X12Loop {
      * that the child loops are access
      * to the unparsed children when
      * the loop was parsed
+     * @return the result
      */
     public List<X12Loop> getUnparsedChildrenLoops() {
         return this.getChildLoops();

@@ -55,6 +55,8 @@ public final class X12LoopUtil {
      * this holder will have a list of {@link X12Loop} as well as a
      * list of any errors {@link X12ErrorDetail} that are found
      * while trying to create the loop hierarchy
+     * @param segmentList the segmentList
+     * @return the result
      */
     public static X12LoopHolder organizeHierarchicalLoops(List<X12Segment> segmentList) {
         X12LoopHolder loopHolder = new X12LoopHolder();
@@ -149,6 +151,7 @@ public final class X12LoopUtil {
      * given a loop, look for the parent loop
      * @param loop
      * @param loopMap
+     * @param loopHolder the loopHolder
      *
      * @throws X12ParserException if the parent loop is missing
      */

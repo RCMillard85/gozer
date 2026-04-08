@@ -61,7 +61,7 @@ public abstract class AbstractTransactionSetParserChainable implements Transacti
      *
      * Note: if a transaction set type does not have a registered parser it is ignored
      *
-     * @param transactionParser
+     * @param txParser the txParser
      * @return true if non-null and added, otherwise false
      */
     public boolean registerNextTransactionSetParser(TransactionSetParser txParser) {
