@@ -123,7 +123,7 @@ public class SourceToSegmentUtilTest {
     public void test_findElementDelimiterCharacter_sourceFile() {
         Character delimiterChar = this.invokeFindElementDelimiterCharacter(sourceDataFromFile);
         assertNotNull(delimiterChar);
-        assertEquals(new Character('*'), delimiterChar);
+        assertEquals(Character.valueOf('*'), delimiterChar);
     }
 
     @Test
@@ -131,7 +131,7 @@ public class SourceToSegmentUtilTest {
         String sourceData = "ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*101127*1719*U*00400*000000049*0*P*>";
         Character delimiterChar = this.invokeFindElementDelimiterCharacter(sourceData);
         assertNotNull(delimiterChar);
-        assertEquals(new Character('*'), delimiterChar);
+        assertEquals(Character.valueOf('*'), delimiterChar);
     }
 
     @Test
@@ -139,7 +139,7 @@ public class SourceToSegmentUtilTest {
         String sourceData = "ISA~01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*101127*1719*U*00400*000000049*0*P*>";
         Character delimiterChar = this.invokeFindElementDelimiterCharacter(sourceData);
         assertNotNull(delimiterChar);
-        assertEquals(new Character('~'), delimiterChar);
+        assertEquals(Character.valueOf('~'), delimiterChar);
     }
 
     @Test
