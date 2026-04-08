@@ -36,7 +36,7 @@ public class ConversionUtilTest {
 
     @Test
     public void test_convertStringToInteger_Number() {
-        assertEquals(new Integer(1), ConversionUtil.convertStringToInteger("1"));
+        assertEquals(Integer.valueOf(1), ConversionUtil.convertStringToInteger("1"));
     }
 
     @Test

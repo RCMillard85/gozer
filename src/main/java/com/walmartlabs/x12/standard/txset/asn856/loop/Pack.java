@@ -80,6 +80,8 @@ public class Pack extends X12ParsedLoop {
     
     /**
      * returns true if the loop passed in is a Pack loop
+     * @param loop the loop
+     * @return the result
      */
     public static boolean isPackLoop(X12Loop loop) {
         return X12Loop.isLoopWithCode(loop, PACK_LOOP_CODE);

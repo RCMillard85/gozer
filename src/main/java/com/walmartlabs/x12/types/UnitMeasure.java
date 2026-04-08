@@ -82,7 +82,7 @@ public enum UnitMeasure {
      * Convert the code to an enum
      *
      * @param code
-     * @return
+     * @return the result
      */
     public static UnitMeasure convert(String code) {
         if (code == null) {

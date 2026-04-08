@@ -59,6 +59,8 @@ public class Item extends X12ParsedLoop {
 
     /**
      * returns true if the loop passed in is a Item loop
+     * @param loop the loop
+     * @return the result
      */
     public static boolean isItemLoop(X12Loop loop) {
         return X12Loop.isLoopWithCode(loop, ITEM_LOOP_CODE);

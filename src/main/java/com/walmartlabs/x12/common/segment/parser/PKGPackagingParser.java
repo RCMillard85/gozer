@@ -24,7 +24,7 @@ public final class PKGPackagingParser {
     /**
      * parse the segment
      * @param segment
-     * @return
+     * @return the result
      */
     public static PKGPackaging parse(X12Segment segment) {
         PKGPackaging pkg = null;

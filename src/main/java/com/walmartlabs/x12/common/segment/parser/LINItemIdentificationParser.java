@@ -28,7 +28,7 @@ public final class LINItemIdentificationParser {
      * parse the segment
      *
      * @param segment
-     * @return
+     * @return the result
      */
     public static List<LINItemIdentification> parse(X12Segment segment) {
         List<LINItemIdentification> itemIdList = new ArrayList<>();

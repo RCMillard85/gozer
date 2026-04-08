@@ -47,7 +47,7 @@ public enum ProductQualifier {
      * Convert the code to an enum
      *
      * @param code
-     * @return
+     * @return the result
      */
     public static ProductQualifier convert(String code) {
         if (code == null) {

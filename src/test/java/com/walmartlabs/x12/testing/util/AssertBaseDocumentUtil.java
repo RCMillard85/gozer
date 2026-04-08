@@ -43,6 +43,7 @@ public final class AssertBaseDocumentUtil {
      *
      * check for correct parsing of base document
      * when no parsers  are registered
+     * @param x12 the x12
      */
     public static void assertBaseDocumentNoParsers(StandardX12Document x12) {
         assertNotNull(x12);
@@ -71,7 +72,7 @@ public final class AssertBaseDocumentUtil {
         InterchangeControlEnvelope ise = x12.getInterchangeControlEnvelope();
         assertNotNull(ise);
         assertEquals("000000049", ise.getInterchangeControlNumber());
-        assertEquals(new Integer(2), ise.getNumberOfGroups());
+        assertEquals(Integer.valueOf(2), ise.getNumberOfGroups());
 
         // groups
         assertNotNull(x12.getGroups());
@@ -113,6 +114,7 @@ public final class AssertBaseDocumentUtil {
      * check for correct parsing of base document
      * when AAA and BBB parsers  are registered
      * but not the YYZ parser
+     * @param x12 the x12
      */
     public static void assertBaseDocument(StandardX12Document x12) {
         assertNotNull(x12);
@@ -141,7 +143,7 @@ public final class AssertBaseDocumentUtil {
         InterchangeControlEnvelope ise = x12.getInterchangeControlEnvelope();
         assertNotNull(ise);
         assertEquals("000000049", ise.getInterchangeControlNumber());
-        assertEquals(new Integer(2), ise.getNumberOfGroups());
+        assertEquals(Integer.valueOf(2), ise.getNumberOfGroups());
 
         // groups
         assertNotNull(x12.getGroups());

@@ -45,7 +45,7 @@ public abstract class AbstractX12TransactionSetWithLoop extends AbstractX12Trans
 
     /**
      * helper method to add multiple X12ErrorDetail for looping errors
-     * @param errorDetail
+     * @param errorDetails the errorDetails
      */
     public void addX12ErrorDetailForLoop(List<X12ErrorDetail> errorDetails) {
         if (!CollectionUtils.isEmpty(errorDetails)) {

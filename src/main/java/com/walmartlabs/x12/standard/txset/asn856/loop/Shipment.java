@@ -70,6 +70,8 @@ public class Shipment extends X12ParsedLoop {
 
     /**
      * returns true if the loop passed in is a Shipment loop
+     * @param loop the loop
+     * @return the result
      */
     public static boolean isShipmentLoop(X12Loop loop) {
         return X12Loop.isLoopWithCode(loop, SHIPMENT_LOOP_CODE);

@@ -77,6 +77,8 @@ public class TrailerSegmentCountX12Rule implements X12Rule {
 
     /**
      * find IEA segment and get number of groups
+     * @param segmentList the segmentList
+     * @return the result
      */
     private int findGroupCountOnIeaTrailer(List<X12Segment> segmentList) {
         int groupCountOnIeaTrailer = 0;
@@ -99,6 +101,9 @@ public class TrailerSegmentCountX12Rule implements X12Rule {
     /**
      * IEA02 should match the total number of groups
      * that are in the EDI file
+     * @param groupHeaders the groupHeaders
+     * @param groupTrailers the groupTrailers
+     * @param groupCountOnIeaTrailer the groupCountOnIeaTrailer
      */
     private void verifyInterchangeControlTrailer(int groupHeaders, int groupTrailers, int groupCountOnIeaTrailer) {
         if (groupHeaders == groupTrailers && groupHeaders == groupCountOnIeaTrailer) {

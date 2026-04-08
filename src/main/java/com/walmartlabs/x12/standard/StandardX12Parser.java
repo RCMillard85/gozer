@@ -138,7 +138,7 @@ public final class StandardX12Parser implements X12Parser<StandardX12Document> {
      * to be registered w/ the parser
      * Note: if a transaction set type does not have a registered parser it is ignored
      *
-     * @param transactionParsers
+     * @param txParser the txParser
      * @return true if non-null and added, otherwise false
      */
     public boolean registerTransactionSetParser(TransactionSetParser txParser) {
@@ -175,6 +175,8 @@ public final class StandardX12Parser implements X12Parser<StandardX12Document> {
     /**
      * template for parsing a standard EDI X12 document
      *
+     * @param segments the segments
+     * @param x12Doc the x12Doc
      * @throws X12ParserException if the document can't be parsed
      */
     private void standardParsingTemplate(SegmentIterator segments, StandardX12Document x12Doc) {
@@ -335,6 +337,7 @@ public final class StandardX12Parser implements X12Parser<StandardX12Document> {
      *
      * @param segment
      * @param x12Doc
+     * @return the result
      */
     private X12Group parseGroupHeader(X12Segment segment, StandardX12Document x12Doc) {
         LOGGER.debug(segment.getIdentifier());
@@ -360,7 +363,7 @@ public final class StandardX12Parser implements X12Parser<StandardX12Document> {
     /**
      * parse the GE segment
      * @param segment
-     * @param x12Doc
+     * @param x12Group the x12Group
      */
     private void parseGroupTrailer(X12Segment segment, X12Group x12Group) {
         LOGGER.debug(segment.getIdentifier());

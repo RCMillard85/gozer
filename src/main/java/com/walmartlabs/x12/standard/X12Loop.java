@@ -76,6 +76,7 @@ public class X12Loop {
      * check if the loop has a specific code
      * @param loop
      * @param desiredCode
+     * @return the result
      */
     public static boolean isLoopWithCode(X12Loop loop, String desiredCode) {
         Optional<String> os = Optional.ofNullable(loop).map(notNullLoop -> notNullLoop.getCode()).filter(

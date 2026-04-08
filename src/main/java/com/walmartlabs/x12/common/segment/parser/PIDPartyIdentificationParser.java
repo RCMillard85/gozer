@@ -24,7 +24,7 @@ public final class PIDPartyIdentificationParser {
     /**
      * parse the segment
      * @param segment
-     * @return
+     * @return the result
      */
     public static PIDProductIdentification parse(X12Segment segment) {
         PIDProductIdentification pid = null;

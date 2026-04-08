@@ -24,7 +24,7 @@ public final class MANMarkNumberParser {
     /**
      * parse the segment
      * @param segment
-     * @return
+     * @return the result
      */
     public static MANMarkNumber parse(X12Segment segment) {
         MANMarkNumber man = null;

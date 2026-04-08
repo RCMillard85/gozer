@@ -29,7 +29,7 @@ public enum InvoiceType {
      * Convert the code to an enum
      *
      * @param code
-     * @return
+     * @return the result
      */
     public static InvoiceType convert(String code) {
         if (code == null) {
