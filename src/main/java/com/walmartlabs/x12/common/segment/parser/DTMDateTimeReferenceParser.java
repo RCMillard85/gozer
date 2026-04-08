@@ -25,7 +25,6 @@ public final class DTMDateTimeReferenceParser {
      * parse the segment
      *
      * @param segment
-     * @return
      * @return the result
      */
     public static DTMDateTimeReference parse(X12Segment segment) {

@@ -110,7 +110,6 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * @param dexVersion
      * @param dexTx
      * @param performCrcCheck
-     * @return
      * @return the result
      */
     protected Set<X12ErrorDetail> validateDexTransaction(Integer dexVersion, Dex894TransactionSet dexTx, boolean performCrcCheck) {
@@ -136,7 +135,6 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * validate each Item in the DEX Transaction
      * @param dexVersion
      * @param dexTx
-     * @return
      * @return the result
      */
     protected Set<X12ErrorDetail> validateItems(Integer dexVersion, Dex894TransactionSet dexTx) {
@@ -163,7 +161,6 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * validate allowance/charge for the DEX Item
      * @param dexVersion
      * @param dexAllowances
-     * @return
      * @return the result
      */
     protected Set<X12ErrorDetail> validateAllowances(Integer dexVersion, List<Dex894Allowance> dexAllowances) {
@@ -186,7 +183,6 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * mandatory attribute that identifies the type of allowance or charge that is to apply.
      * @param dexVersion
      * @param dexAllowance
-     * @return
      * @return the result
      */
     protected X12ErrorDetail checkAllowanceCode(Integer dexVersion, Dex894Allowance dexAllowance) {
@@ -203,7 +199,6 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      * mandatory attribute that indicates the method of handling for the allowance or charge.
      * @param dexVersion
      * @param dexAllowance
-     * @return
      * @return the result
      */
     protected X12ErrorDetail checkMethodHandlingCode(Integer dexVersion, Dex894Allowance dexAllowance) {
@@ -225,7 +220,6 @@ public class DefaultDex894Validator implements X12Validator<Dex894> {
      *
      * @param dexVersion
      * @param dexAllowance
-     * @return
      * @return the result
      */
     protected X12ErrorDetail checkAllowanceAmount(Integer dexVersion, Dex894Allowance dexAllowance) {

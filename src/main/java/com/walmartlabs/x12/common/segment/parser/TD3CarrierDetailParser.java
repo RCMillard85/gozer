@@ -24,7 +24,6 @@ public final class TD3CarrierDetailParser {
     /**
      * parse the segment
      * @param segment
-     * @return
      * @return the result
      */
     public static TD3CarrierDetail parse(X12Segment segment) {

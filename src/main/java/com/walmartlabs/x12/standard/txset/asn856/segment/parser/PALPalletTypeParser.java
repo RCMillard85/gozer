@@ -24,7 +24,6 @@ public final class PALPalletTypeParser {
     /**
      * parse the segment
      * @param segment
-     * @return
      * @return the result
      */
     public static PALPalletType parse(X12Segment segment) {

@@ -28,7 +28,6 @@ public final class N1PartyIdentificationParser {
     /**
      * parse the segment
      * @param segment
-     * @return
      * @return the result
      */
     public static N1PartyIdentification parse(X12Segment segment) {
@@ -52,7 +51,6 @@ public final class N1PartyIdentificationParser {
      * this is the preferred method to use
      * @param segment
      * @param segmentIterator
-     * @return
      * @return the result
      */
     public static N1PartyIdentification handleN1Loop(X12Segment segment, SegmentIterator segmentIterator) {

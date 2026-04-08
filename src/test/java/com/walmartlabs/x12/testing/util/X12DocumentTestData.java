@@ -12,7 +12,6 @@ public final class X12DocumentTestData {
      * read a file and return file contents as a String
      *
      * @param file
-     * @return
      * @return the result
      */
     public static String readFile(String file) {
@@ -29,7 +28,6 @@ public final class X12DocumentTestData {
      * read a file and return file contents as byte array
      *
      * @param file
-     * @return
      * @return the result
      */
     public static byte[] readFileAsBytes(String file) {

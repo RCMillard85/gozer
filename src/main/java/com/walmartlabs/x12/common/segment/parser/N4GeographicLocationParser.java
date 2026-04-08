@@ -24,7 +24,6 @@ public final class N4GeographicLocationParser {
     /**
      * parse the segment
      * @param segment
-     * @return
      * @return the result
      */
     public static N4GeographicLocation parse(X12Segment segment) {

@@ -24,7 +24,6 @@ public final class FOBRelatedInstructionsParser {
     /**
      * parse the segment
      * @param segment
-     * @return
      * @return the result
      */
     public static FOBRelatedInstructions parse(X12Segment segment) {
